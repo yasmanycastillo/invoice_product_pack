@@ -24,7 +24,5 @@ class AccountMove(models.Model):
                         for pl in product_pack.pack_line_ids:
                             if product_id == pl.product_id.id:
                                 inv_line['price_unit'] = unit_price * pl.quantity
-                                inv_line['tax_ids'] = [
-                                    (6, 0, pack_line.tax_id.ids)]
 
         return super(AccountMove, self).create(vals_list)
